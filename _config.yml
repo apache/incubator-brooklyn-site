@@ -1,0 +1,2 @@
+exclude: ['LICENSE.md', 'README.md']
+url: https://brooklyn.incubator.apache.org/
