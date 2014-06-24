@@ -46,13 +46,10 @@ Add a second remote, for the GitHub repository.
 
     git remote add github https://github.com/apache/incubator-brooklyn.git
 
-Edit the `.git/config` file and modify the `[remote "github"]` section like this - this will cause every pull request
-to be made available as a remote branch in your workspace.
+For the GitHub remote, add an additional `fetch` reference which will cause
+every pull request to be made available as a remote branch in your workspace.
 
-    [remote "github"]
-    url = https://github.com/apache/incubator-brooklyn.git
-        fetch = +refs/heads/*:refs/remotes/github/*
-        fetch = +refs/pull/*/head:refs/remotes/github/pr/*
+    git config --local --add remote.github.fetch '+refs/pull/*/head:refs/remotes/github/pr/*'
 
 Finally, run `git fetch --all` to update from all remote repositories - you will see all the pull requests appear:
 
@@ -69,7 +66,7 @@ Fetch the latest remote branches, which will cause a remote branch for the PR to
 
 If you want to inspect the PR and/or run tests, check out the branch:
 
-    git checkout pull/github/1234
+    git checkout github/pr/1234
 
 To perform the merge, first update your master branch to the latest:
 
@@ -78,8 +75,12 @@ To perform the merge, first update your master branch to the latest:
 
 Then merge and push:
 
-    git merge pull/github/1234
+    git merge --no-ff -m 'This closes #1234' github/pr/1234
     git push apache master
+
+Note that this commit message is important, as this is what will trigger the
+pull request to be automatically closed, and the `--no-ff` means that a merge
+commit will always be created.
 
 
 Alternative options
@@ -105,3 +106,14 @@ keep the authorship of the commit, so we should use it instead of the diff.
 Apply the patch preserving the original author:
 
     git am pull-request-9876.patch
+
+
+Additional information
+----------------------
+
+Particularly for new committers, you may find the following information useful:
+
+* [Guide for new project
+  committers](https://www.apache.org/dev/new-committers-guide.html)
+* [Committers FAQ](https://www.apache.org/dev/committers.html)
+* [Git at Apache](https://git-wip-us.apache.org/)
