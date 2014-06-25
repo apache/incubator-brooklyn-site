@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{site.url}}">Apache <img src="{{site.url}}style/img/brooklyn-logo-150px.png" alt="brooklyn"></a>
+                {% if page.navgroup != 'home' %}<a class="navbar-brand" href="{{site.url}}"><img src="{{site.url}}style/img/apache-brooklyn-logo-244px-wide.png" alt="brooklyn"></a>{% endif %}
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

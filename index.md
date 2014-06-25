@@ -5,6 +5,7 @@ navgroup: home
 ---
 
 <div class="jumbotron">
+<div id="apachebrooklynbanner">&nbsp;</div>
 <div class="row">
 <div class="col-md-6">
 <div id="brooklynbridge">&nbsp;</div>

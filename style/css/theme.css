@@ -11,6 +11,20 @@ html {
     }
 }
 
+.navbar-brand {
+    margin-top: -4px;
+    margin-left: -30px !important;
+}
+
+#apachebrooklynbanner {
+    background-image: url("../img/apache-brooklyn-logo-817px-wide.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 817px;
+    height: 99px;
+    margin-bottom: 50px;
+}
+
 #brooklynbridge {
     background-image: url("../img/bridge-large-no-title.png");
     background-repeat: no-repeat;
