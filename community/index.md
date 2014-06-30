@@ -62,6 +62,15 @@ Committers can read the corresponding [guide for committers](committers.html)
 to see how to review and merge contributions.
 
 
+## Contributing to the website and documentation
+
+We would also be very happy to receive contributions to our website and
+documentation. You can read our [How to contribute
+documentation](how-to-contribute-docs.html) guide or, if you are impatient,
+simply click on the *Edit this page* button at the bottom of most pages on this
+site and follow the instructions.
+
+
 ## IRC
 
 Join channel `#brooklyncentral` on the [Freenode](https://freenode.net/) IRC
