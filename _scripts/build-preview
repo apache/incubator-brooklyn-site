@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+set -x
+
+sitedir=$( cd $( dirname $0 ); cd ..; pwd )/_site
+siteurl="file://${sitedir}/"
+echo > _config_local.yml "url: ${siteurl}"
+
+rm -rf _site
+jekyll build --config _config.yml,_config_local.yml
