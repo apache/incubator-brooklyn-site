@@ -1,2 +1,2 @@
-exclude: ['LICENSE.md', 'README.md']
+exclude: ['LICENSE.md', 'README.md', 'Gemfile', 'Gemfile.lock' ]
 url: https://brooklyn.incubator.apache.org/
