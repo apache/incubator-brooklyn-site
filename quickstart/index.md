@@ -4,14 +4,12 @@ layout: normal
 navgroup: getstarted
 ---
 
-{% include fields.md %}
-
 This guide will walk you through deploying an application to a public cloud.
 
 We will be deploying an example 3-tier web application, described using this blueprint: 
 
 {% highlight yaml %}
-{% readj my-web-cluster.yaml %}
+{% readj _my-web-cluster.yaml %}
 {% endhighlight %}
 
 (This is written in YAML, following the [camp specification](https://www.oasis-open.org/committees/camp/). )
@@ -19,7 +17,7 @@ We will be deploying an example 3-tier web application, described using this blu
 
 ## Install Brooklyn
 
-Download the [Brooklyn distribution]({{ this_dist_url_tgz }}) and expand it to your home directory ( `~/` ), or in a location of your choice. (Other [download options]({{site.url}}/download.html) are available.)
+Download the [Brooklyn distribution]({{ site.data.brooklyn.url.dist.tgz }}) and expand it to your home directory ( `~/` ), or in a location of your choice. (Other [download options]({{site.url}}/download.html) are available.)
 
 {% if brooklyn_version contains 'SNAPSHOT' %}
 Expand the `tar.gz` archive (note: as this is a -SNAPSHOT version, your filename will be slightly different):
@@ -29,15 +27,15 @@ Expand the `tar.gz` archive:
 
 {% if brooklyn_version contains 'SNAPSHOT' %}
 {% highlight bash %}
-$ tar -zxf brooklyn-dist-{{ brooklyn_version }}-timestamp-dist.tar.gz
+$ tar -zxf brooklyn-dist-{{ site.data.brooklyn.version }}-timestamp-dist.tar.gz
 {% endhighlight %}
 {% else %}
 {% highlight bash %}
-$ tar -zxf brooklyn-dist-{{ brooklyn_version }}-dist.tar.gz
+$ tar -zxf brooklyn-dist-{{ site.data.brooklyn.version }}-dist.tar.gz
 {% endhighlight %}
 {% endif %}
 
-This will create a `brooklyn-{{ brooklyn_version }}` folder.
+This will create a `brooklyn-{{ site.data.brooklyn.version }}` folder.
 
 Note: You'll need a Java JRE or SDK installed (version 6 or later), as Brooklyn is Java under the covers.
 
@@ -48,7 +46,7 @@ Let's setup some paths for easy commands.
 (Click the clipboard on these code snippets for easier c&p.)
 
 {% highlight bash %}
-$ cd brooklyn-{{ brooklyn_version }}
+$ cd brooklyn-{{ site.data.brooklyn.version }}
 $ BROOKLYN_DIR="$(pwd)"
 $ export PATH=$PATH:$BROOKLYN_DIR/bin/
 {% endhighlight %}
@@ -83,12 +81,12 @@ Create a `.brooklyn` folder in your home directory and download the template [br
 {% highlight bash %}
 $ mkdir ~/.brooklyn
 $ cd ~/.brooklyn
-$ wget {{site.url}}/use/guide/quickstart/brooklyn.properties
+$ wget {{site.url}}quickstart/brooklyn.properties
 {% endhighlight %}
 
 Open brooklyn.properties in a text editor and add your cloud credentials.
 
-If you would rather test Brooklyn on localhost, follow [these instructions]({{site.url}}/use/guide/locations/) to ensure that your Brooklyn can access your machine.
+If you would rather test Brooklyn on localhost, follow [these instructions]({{ site.data.brooklyn.url.userguide }}use/guide/locations/) to ensure that your Brooklyn can access your machine.
 
 Restart Brooklyn:
 
@@ -127,7 +125,7 @@ location: localhost
 **My Web Cluster Blueprint**
 
 {% highlight yaml %}
-{% readj my-web-cluster.yaml %}
+{% readj _my-web-cluster.yaml %}
 {% endhighlight %}
 
 Paste the modified YAML into the dialog and click 'Finish'.

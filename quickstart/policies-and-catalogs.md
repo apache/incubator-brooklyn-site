@@ -4,8 +4,6 @@ layout: normal
 navgroup: getstarted
 ---
 
-{% include fields.md %}
-
 In the [previous step](index.html) we downloaded Brooklyn and used it to deploy an application to a cloud, but at its heart Brooklyn is a policy driven *management* plane.
 
 Here we will introduce Polices using a simple demo app, which we will load from a Service Catalog.
@@ -16,7 +14,7 @@ Download the template [catalog.xml](catalog.xml) to your `~/.brooklyn/` folder, 
 
 {% highlight bash %}
 $ cd ~/.brooklyn
-$ wget {{site.url}}/use/guide/quickstart/catalog.xml
+$ wget {{site.data.brooklyn.url.userguide}}/use/guide/quickstart/catalog.xml
 
 $ brooklyn launch
 {% endhighlight %}
@@ -57,7 +55,7 @@ As load is added, Brooklyn requests a new cloud machine, creates a new app serve
 
 ### Next
 
-The [Elastic Web Cluster Example]({{site.url}}/use/examples/webcluster/index.html) page
+The [Elastic Web Cluster Example]({{site.data.brooklyn.url.userguide}}/use/examples/webcluster/index.html) page
 details how to build this demo application from scratch in Java. It shows in more detail how Brooklyn can
 complement your application with policy driven management, and how applications can be
 run from the command line.
