@@ -81,12 +81,12 @@ Create a `.brooklyn` folder in your home directory and download the template [br
 {% highlight bash %}
 $ mkdir ~/.brooklyn
 $ cd ~/.brooklyn
-$ wget {{site.url}}quickstart/brooklyn.properties
+$ wget {{site.url}}/quickstart/brooklyn.properties
 {% endhighlight %}
 
 Open brooklyn.properties in a text editor and add your cloud credentials.
 
-If you would rather test Brooklyn on localhost, follow [these instructions]({{ site.data.brooklyn.url.userguide }}use/guide/locations/) to ensure that your Brooklyn can access your machine.
+If you would rather test Brooklyn on localhost, follow [these instructions]({{ site.data.brooklyn.url.userguide }}/use/guide/locations/) to ensure that your Brooklyn can access your machine.
 
 Restart Brooklyn:
 
