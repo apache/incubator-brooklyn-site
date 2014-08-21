@@ -1,7 +1,11 @@
 ---
 layout: normal
 title: Community
-navgroup: community
+children:
+- { path: community/how-to-contribute.md }
+- { path: community/migrate-to-apache.md }
+- { path: community/committers.md }
+- { path: community/how-to-contribute-docs.md }
 ---
 
 <div class="row">

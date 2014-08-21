@@ -1,7 +1,6 @@
 ---
 layout: normal
 title: Documentation
-navgroup: docs
 ---
 
 ## Official User Manual

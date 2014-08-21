@@ -1,7 +1,8 @@
 ---
 title: Getting Started
 layout: normal
-navgroup: getstarted
+children:
+- { path: quickstart/policies-and-catalogs.md }
 ---
 
 This guide will walk you through deploying an application to a public cloud.

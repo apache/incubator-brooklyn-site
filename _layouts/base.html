@@ -29,11 +29,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="{% if page.navgroup == 'learnmore' %}active{% endif %}"><a href="{{site.url}}/learnmore.html">learn more</a></li>
-                    <li class="{% if page.navgroup == 'download' %}active{% endif %}"><a href="{{site.url}}/download.html">download</a></li>
-                    <li class="{% if page.navgroup == 'getstarted' %}active{% endif %}"><a href="{{site.url}}/quickstart/">get started</a></li>
-                    <li class="{% if page.navgroup == 'docs' %}active{% endif %}"><a href="{{site.url}}/documentation.html">documentation</a></li>
-                    <li class="{% if page.navgroup == 'community' %}active{% endif %}"><a href="{{site.url}}/community/">community</a></li>
+                    {% for navgroup in site.data.navgroups %}
+                    <li class="{% if page.navgroup == navgroup.id %}active{% endif %}"><a href="{{site.url}}{{navgroup.page.url}}">{{navgroup.title}}</a></li><!-- {{ navgroup.id }} -->
+                    {% endfor %}
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
