@@ -33,6 +33,18 @@ module SiteStructure
       end
       puts "#{page.path} #{page.data['navgroup']}"
       
+      # Figure out second level menu
+      # If there's no parent => I'm at the top level, so no action
+      # If there's a parent, but parent has no parent => I'm at second level, so set second-level menu
+      # Otherwise, use the parent's second level menu
+      if parent && !parent.data['parent']
+        page.data['menu2parent'] = page
+        page.data['menu2'] = page.data['children']
+      elsif parent && parent.data['parent']
+        page.data['menu2parent'] = parent.data['menu2parent']
+        page.data['menu2'] = parent.data['menu2']
+      end
+      
       page.data['parent'] = parent
       if page.data['children']
         page.data['children'].each do |c|

@@ -30,7 +30,20 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     {% for navgroup in site.data.navgroups %}
+                    {% if navgroup.page.menu2 %}
+                    <li class="dropdown{% if page.navgroup == navgroup.id %} active{% endif %}">
+                        <a href="{{site.url}}{{navgroup.page.url}}">{{navgroup.title}}</a>
+                        <ul class="dropdown-menu" role="menu">
+                            {% for child in navgroup.page.menu2 %}
+                            <li>
+                                <a href="{{site.url}}{{child.reference.url}}">{{child.reference.title}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li><!-- {{ navgroup.id }} -->
+                    {% else %}
                     <li class="{% if page.navgroup == navgroup.id %}active{% endif %}"><a href="{{site.url}}{{navgroup.page.url}}">{{navgroup.title}}</a></li><!-- {{ navgroup.id }} -->
+                    {% endif %}
                     {% endfor %}
                 </ul>
             </div><!-- /.navbar-collapse -->
