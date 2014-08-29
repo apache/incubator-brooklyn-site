@@ -16,6 +16,10 @@ html {
     margin-left: -30px !important;
 }
 
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+}
+
 #apachebrooklynbanner {
     background-image: url("../img/apache-brooklyn-logo-817px-wide.png");
     background-repeat: no-repeat;

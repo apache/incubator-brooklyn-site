@@ -2,6 +2,18 @@
 layout: homepage
 title: Home
 navgroup: home
+children:
+- { path: learnmore.md }
+- { path: download.md }
+- { path: quickstart/index.md }
+- { path: documentation.md }
+- { path: community/index.md }
+navgroups:
+- { id: learnmore, page: learnmore.md, title: learn more }
+- { id: download, page: download.md, title: download }
+- { id: getstarted, page: quickstart/index.md, title: get started }
+- { id: documentation, page: documentation.md, title: documentation }
+- { id: community, page: community/index.md, title: community }
 ---
 
 <div class="jumbotron">

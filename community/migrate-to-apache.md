@@ -1,7 +1,6 @@
 ---
 layout: normal
 title: How to migrate your brooklyncentral fork to Apache
-navgroup: community
 ---
 
 Prior to our adoption by the Apache Incubator, Brooklyn was developed in a

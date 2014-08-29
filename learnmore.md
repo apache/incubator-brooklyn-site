@@ -1,7 +1,6 @@
 ---
 layout: normal
 title: Learn More
-navgroup: learnmore
 ---
 
 <div class="jumobotron" markdown="1">

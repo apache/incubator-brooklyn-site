@@ -48,7 +48,7 @@ module BrooklynMetadata
         }
       end
       
-      url_set['userguide'] = "#{site.config['url']}v/#{BrooklynMetadata::BROOKLYN_VERSION}/"
+      url_set['userguide'] = "#{site.config['url']}/v/#{BrooklynMetadata::BROOKLYN_VERSION}"
       
       site.data['brooklyn'] = {
           "version" => BrooklynMetadata::BROOKLYN_VERSION,

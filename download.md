@@ -1,7 +1,6 @@
 ---
 layout: normal
 title: Download
-navgroup: download
 ---
 
 ## Download Brooklyn Binary Distributions
