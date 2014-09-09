@@ -1,6 +1,0 @@
-#!/bin/bash -e
-
-set -x
-
-rm -rf _site
-jekyll build

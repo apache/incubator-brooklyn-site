@@ -50,17 +50,9 @@ versions:
 
 Building and previewing the website
 -----------------------------------
-
-Run this script:
-
-    ./_scripts/build-preview
-
-This will run Jekyll using a base URL of type `file://` for the repository
-directory. This means that it is possible to browse the generated files,
-located in the `_site` directory, using a web browser pointed at your
-filesystem. Unfortunately it does mean that moving the files, or attempting to
-point a web server host at them, will not work.
-
+    $ jekyll build
+    $ jekyll serve --watch
+    # => Now browse to http://localhost:4000
 
 Building and publishing the website
 -----------------------------------
