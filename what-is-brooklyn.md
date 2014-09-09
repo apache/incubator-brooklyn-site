@@ -1,6 +1,7 @@
 ---
 layout: normal
-title: Learn More
+title: What is Brooklyn
+permalink: /what-is-brooklyn/
 ---
 
 <div class="jumobotron" markdown="1">
