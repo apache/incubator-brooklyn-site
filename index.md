@@ -3,13 +3,13 @@ layout: homepage
 title: Home
 navgroup: home
 children:
-- { path: learnmore.md }
+- { path: what-is-brooklyn.md }
 - { path: download.md }
 - { path: quickstart/index.md }
 - { path: documentation.md }
 - { path: community/index.md }
 navgroups:
-- { id: learnmore, page: learnmore.md, title: learn more }
+- { id: what-is-brooklyn, page: what-is-brooklyn.md, title: What is Brooklyn }
 - { id: download, page: download.md, title: download }
 - { id: getstarted, page: quickstart/index.md, title: get started }
 - { id: documentation, page: documentation.md, title: documentation }
@@ -63,8 +63,8 @@ View and modify using the *web console* or automate using the *REST API*
 
 <div style="text-align: center" markdown="1">
 
-<a class="btn btn-primary btn-lg" role="button" href="learnmore.html">learn more</a>
-<a class="btn btn-primary btn-lg" role="button" href="quickstart/">get started</a>
+<a class="btn btn-default btn-lg" role="button" href="quickstart/">Learn more</a>
+<a class="btn btn-primary btn-lg" role="button" href="quickstart/install">Install</a>
 
 </div>
 
