@@ -26,10 +26,10 @@ navgroups:
 
 *Blueprints* describe your application, stored as *text files* in *version control*
 
-*Compose* from the *dozens* of app supported components or your *own components* using *bash, Java, Chef...*
+*Compose* from the [*dozens* of supported components](learnmore/catalog/) or your *own components* using *bash, Java, Chef...*
 
 <div class="text-muted" markdown="1">
-#### JBoss &bull; Cassandra &bull; QPid &bull; nginx &bull; many more
+#### JBoss &bull; Cassandra &bull; QPid &bull; nginx &bull; [many more](learnmore/catalog/)
 </div>
 
 </div>
