@@ -1,5 +1,5 @@
 ---
-title: Getting Started - Policies and Catalogs
+title: Policies and Catalogs
 layout: normal
 ---
 
