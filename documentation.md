@@ -1,6 +1,8 @@
 ---
 layout: normal
 title: Documentation
+children:
+- { path: glossary.md }
 ---
 
 ## Official User Manual
