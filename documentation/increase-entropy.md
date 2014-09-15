@@ -25,6 +25,7 @@ The following links contain further [information for RHEL or CentOS](http://my.i
 You can also just mv /dev/random then create it again linked to /dev/urandom, by issuing the following commands:
 
 {% highlight bash %}
-sudo mv /dev/random /dev/random-real", "sudo ln -s /dev/urandom /dev/random"
+sudo mv /dev/random /dev/random-real
+sudo ln -s /dev/urandom /dev/random
 {% endhighlight %}
 

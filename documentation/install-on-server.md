@@ -1,6 +1,6 @@
 ---
 layout: normal
-title: Install Apache Brooklyn&reg; on a server
+title: Installing on a server
 ---
 Here we present two *alternatives* to install Brooklyn:
 
@@ -82,11 +82,11 @@ By default Brooklyn loads configuration parameters (including credentials for an
 
 The `brooklyn.properties` is the main configuration file for deployment locations. Contains the connection details and credentials for all public or on-premises cloud providers, as well as controlling some application startup and security options.
 
-Create a `.brooklyn` folder in your home directory and download the template [brooklyn.properties]({{ site.url }}/brooklyn.properties) to that folder.
+Create a `.brooklyn` folder in your home directory and download the template [brooklyn.properties](../quickstart/brooklyn.properties) to that folder.
 
 {% highlight bash %}
 $ mkdir -p ~/.brooklyn
-$ curl -o ~/.brooklyn/brooklyn.properties http://brooklyncentral.github.io/use/guide/quickstart/brooklyn.properties
+$ wget -O ~/.brooklyn/brooklyn.properties {{site.url}}/quickstart/brooklyn.properties
 $ chmod 600 ~/.brooklyn/brooklyn.properties
 {% endhighlight %}
 
@@ -97,8 +97,7 @@ By default Brooklyn loads the catalog of available application components and se
 `~/.brooklyn/catalog.xml`. 
 
 {% highlight bash %}
-$ curl -o ~/.brooklyn/catalog.xml \
-http://brooklyncentral.github.io/use/guide/quickstart/catalog.xml
+$ wget -O ~/.brooklyn/catalog.xml {{site.url}}/quickstart/catalog.xml
 {% endhighlight %}
 
 The `catalog.xml` is the application blueprint catalog. The above example file contains some blueprints which will be automatically downloaded from the web if you run them.

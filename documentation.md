@@ -1,8 +1,8 @@
 ---
 layout: normal
 title: Documentation
-+children:
-+- { path: documentation/install-on-server.md }
+children:
+- { path: documentation/install-on-server.md }
 ---
 
 ## Official User Manual
