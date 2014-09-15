@@ -143,9 +143,9 @@ lessons:
 
 - The truth is in the code (not any ancillary documents)
 - If it isn't tested then assume it isn't working
-- Toolchain integration and API's are key to a project's success
+- Toolchain integration and APIs are key to a project's success
 - Even more critical is empowering all stakeholders to a project
-- Brooklyn's focus on blueprinting and modeling as code and API's serves these
+- Brooklyn's focus on blueprinting and modeling as code and APIs serves these
 principles.
 
 ### Autonomic computing

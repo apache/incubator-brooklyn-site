@@ -15,7 +15,7 @@ children:
 
 Our main discussion list is our *dev* list - here you can ask questions and get
 help with issues, ranging from basic getting started through to detailed
-questions about brooklyn's internals.
+questions about Brooklyn's internals.
 
 To subscribe, send an email to:
 [dev-subscribe@brooklyn.incubator.apache.org](mailto:dev-subscribe@brooklyn.incubator.apache.org)
@@ -35,12 +35,12 @@ and [read the archives here](https://mail-archives.apache.org/mod_mbox/incubator
 
 ### Historical lists
 
-Before brooklyn joined the Apache Incubator, we had lists hosted on Google
+Before Brooklyn joined the Apache Incubator, we had lists hosted on Google
 Groups. These lists are now deprecated and it's no longer possible to subscribe
 or post, but you may find useful information in the archives.
 
-- [Old brooklyn users list archive](https://groups.google.com/forum/#!forum/brooklyn-dev)
-- [Old brooklyn dev list archive](https://groups.google.com/forum/#!forum/brooklyn-dev)
+- [Old Brooklyn users list archive](https://groups.google.com/forum/#!forum/brooklyn-dev)
+- [Old Brooklyn dev list archive](https://groups.google.com/forum/#!forum/brooklyn-dev)
 
 Once again, these lists are deprecated, so please subscribe to the Apache-hosted
 lists to receive new messages.
