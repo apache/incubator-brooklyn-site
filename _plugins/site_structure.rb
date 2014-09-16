@@ -10,7 +10,6 @@ module SiteStructure
       navgroups.each do |ng|
         ng['page'] = site.pages.detect { |page| page.path == ng['page'] }
       end
-      puts navgroups
       site.data['navgroups'] = navgroups
       site.data['structure'] = gen_structure(site, SiteStructure::ROOT, nil, navgroups)
     end
@@ -31,7 +30,6 @@ module SiteStructure
           page.data['navgroup'] = parent.data['navgroup']
         end
       end
-      puts "#{page.path} #{page.data['navgroup']}"
       
       # Figure out second level menu
       # If there's no parent => I'm at the top level, so no action
