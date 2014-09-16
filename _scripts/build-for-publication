@@ -3,4 +3,4 @@
 set -x
 
 rm -rf _site
-jekyll build
+jekyll build --config _config.yml,_config_for_publication.yml
