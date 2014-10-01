@@ -51,6 +51,21 @@ versions:
 Building and previewing the website
 -----------------------------------
 
+### Using Jekyll's in-built server
+
+Run the command:
+
+    jekyll serve
+    
+or:
+
+    jekyll serve --watch
+
+This will start up a local web server. The URL is printed by Jekyll when the server starts. It will continue to run
+until you press Ctrl+C.
+
+
+### Using file:/// URLs
 Run this script:
 
     ./_scripts/build-preview
