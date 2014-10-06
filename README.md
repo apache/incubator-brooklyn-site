@@ -55,26 +55,20 @@ Building and previewing the website
 
 Run the command:
 
-    jekyll serve
-    
-or:
-
     jekyll serve --watch
+    
+This will start up a local web server. The URL is printed by Jekyll when the server starts,
+e.g. http://localhost:4000/brooklyn/ . The server will continue to run until you press Ctrl+C.
+Modified files will be detected and regenerated (but that might take up to 1m).
+Leave off the `--watch` argument to abandon that behaviour, or use `jekyll build` instead
+to generate a site in `_site` without a server, for instance if your browser supports running from disk.
 
-This will start up a local web server. The URL is printed by Jekyll when the server starts. It will continue to run
-until you press Ctrl+C.
 
 
-### Using file:/// URLs
-Run this script:
+### Combining with Brooklyn user-manual / version docs
 
-    ./_scripts/build-preview
-
-This will run Jekyll using a base URL of type `file://` for the repository
-directory. This means that it is possible to browse the generated files,
-located in the `_site` directory, using a web browser pointed at your
-filesystem. Unfortunately it does mean that moving the files, or attempting to
-point a web server host at them, will not work.
+TODO: Some links should come from the incubator-brooklyn/docs/ project.
+They can run in debug mode on a different port.
 
 
 Building and publishing the website

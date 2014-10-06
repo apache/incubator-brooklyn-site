@@ -1,0 +1,8 @@
+
+url: https://brooklyn.incubator.apache.org
+baseurl: ""
+
+dependency_mode: remote
+
+# NB: should inherit (and override) the root _config.yml
+
