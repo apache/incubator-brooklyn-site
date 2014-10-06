@@ -29,10 +29,12 @@ gems.
 
 At this point, close your shell session and start a new one, to get the new
 environment that RVM has configured. Now change directory to the location where
-you checked out your repository; RVM should detect its configuration inside
-`Gemfile` and try to configure itself. Most likely it will report that the
-required version of Ruby is not installed; it will show the command that you
-need to run to install the correct version. Follow the instructions.
+you checked out your repository, and then to the `_scripts` subdirectory.
+
+RVM should detect its configuration inside `Gemfile` and try to configure itself. 
+Most likely it will report that the required version of Ruby is not installed; 
+it will show the command that you need to run to install the correct version. 
+Follow these instructions.
 
 Once the correct version of Ruby is installed, change to your home directory
 (`cd ~`) and then change back to the repository again (`cd -`). This will cause
@@ -42,10 +44,13 @@ If you are running Ubuntu, there is a further dependency that is required:
 
     sudo apt-get install libxslt-dev libxml2-dev
 
-Finally, run this command to install all the required Gems in the correct
-versions:
+Finally, run this command inside `_scripts` to install all the required Gems 
+in the correct versions:
 
     bundle install
+
+Anytime you need to reset your Ruby environment for jekyll to run correctly,
+return to the `_scripts` directory and re-run the above command.
 
 
 Building and previewing the website
