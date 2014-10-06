@@ -1,6 +1,7 @@
 ---
 layout: normal
-title: Learn More
+title: The Theory behind Brooklyn
+navgroup: Learn More
 ---
 
 <div class="jumobotron" markdown="1">
@@ -18,14 +19,14 @@ an application. Use APIs to add the server to a load balancer. When load goes
 up, provision another server; when load drops, kill a server to save money.
 
 Many new tools have appeared that take advantage of this new era. However each
-of them only solve part of the problem and don’t consider the big picture. For
+of them only solve part of the problem and don't consider the big picture. For
 example, configuration management tools such as Chef can, in a single command,
 provision a new cloud server then install and configure an application -- but
 they require extra programming to reconfigure an load balancer whenever the pool
 of web servers changes. Amazon Auto Scaling can provision new servers and update
 load balancers, but it is dependent on CloudWatch -- this means either using
 proxy metrics such as average response time, or writing more code to expose an
-application’s real metrics. A dedicated monitoring tool may be able to easily
+application's real metrics. A dedicated monitoring tool may be able to easily
 monitor the key metrics with little effort, but its alerts will need to be
 integrated it into the server provisioning process.
 
@@ -47,7 +48,7 @@ deadlocks.
 ## How Brooklyn can help
 
 In this context the advantage of Brooklyn becomes apparent: a single tool is
-able to manage provisioning and application deployment, monitor an application’s
+able to manage provisioning and application deployment, monitor an application's
 health and metrics, understand the dependencies between components (such as
 knowing that adding a new web server means that the load balancer needs
 reconfiguration) and apply complex policies to manage the application. The tool
@@ -104,7 +105,7 @@ web applications know where the database is.
 
 Brooklyn collects key metrics to monitor the health of applications; for
 example, by sending a request and measuring latency, or installing
-monitoring tools and using those to read a server’s management interface to
+monitoring tools and using those to read a server's management interface to
 determine the request queue length. These metrics can be fed into policies,
 which automatically take actions such as restarting a failed node, or
 scaling out the web tier if user demand exceeds capacity. This allows an
@@ -174,4 +175,3 @@ management layer, and TOSCA focuses on declarative support for more
 sophisticated orchestration. Currently Brooklyn uses a YAML which complies with
 CAMP's syntax and exposes many of the CAMP REST API endpoints. We would like to
 support the hot-off-the-press TOSCA YAML and expand the CAMP REST API coverage.
-

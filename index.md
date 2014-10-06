@@ -3,13 +3,13 @@ layout: homepage
 title: Home
 navgroup: home
 children:
-- { path: learnmore.md }
+- { path: learnmore/index.md }
 - { path: download.md }
 - { path: quickstart/index.md }
 - { path: documentation.md }
 - { path: community/index.md }
 navgroups:
-- { id: learnmore, page: learnmore.md, title: learn more }
+- { id: learnmore, page: learnmore/index.md, title: learn more }
 - { id: download, page: download.md, title: download }
 - { id: getstarted, page: quickstart/index.md, title: get started, title_in_menu: Get started }
 - { id: documentation, page: documentation.md, title: documentation, title_in_menu: All documentation }
