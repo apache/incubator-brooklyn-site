@@ -19,7 +19,7 @@ To manage the brooklyn service you must also be able to connect to port 8081 rem
 
 Once the above prerequisites are satisfied, you should be able to run successfully:
 {% highlight bash %}
-$ curl -o brooklyn-install.sh http://git.io/GzkOKQ
+$ curl -o brooklyn-install.sh -L https://github.com/apache/incubator-brooklyn/raw/master/brooklyn-install.sh
 $ chmod +x ./brooklyn-install.sh
 $ ./brooklyn-install.sh -s -r <your-server-ip>
 {% endhighlight %}
