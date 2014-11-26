@@ -46,7 +46,13 @@ module SiteStructure
       page.data['parent'] = parent
       if page.data['children']
         page.data['children'].each do |c|
-          c['reference'] = gen_structure(site, c['path'], page, navgroups)
+          if c['path']
+            # links to another Jekyll-managed page
+            c['reference'] = gen_structure(site, c['path'], page, navgroups)
+          elsif c['link']
+            # links to a not-Jekyll-managed page on this site
+            c['reference'] = { 'url' => c['link'], 'title' => c['title'] }
+          end
         end
       end
       
