@@ -34,6 +34,10 @@
                     <li class="dropdown{% if page.navgroup == navgroup.id %} active{% endif %}">
                         <a href="{{site.url}}{{navgroup.page.url}}">{{navgroup.title}}</a>
                         <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{site.url}}{{navgroup.page.url}}">{{navgroup.title_in_menu}}</a>
+                            </li>
+                            <li class="divider"></li>
                             {% for child in navgroup.page.menu2 %}
                             <li>
                                 <a href="{{site.url}}{{child.reference.url}}">{{child.reference.title}}</a>
