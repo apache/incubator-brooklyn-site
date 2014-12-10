@@ -15,6 +15,46 @@ We will be deploying an example 3-tier web application, described using this blu
 
 (This is written in YAML, following the [camp specification](https://www.oasis-open.org/committees/camp/). )
 
+This tutorial assumes that you are using Linux or Mac OSX.
+
+
+## Verify SSH
+
+Brooklyn uses SSH extensively and therefore it is worth making sure that you have a known working SSH setup before
+starting.
+
+Please check the following items:
+
+- If you are using Mac OSX, open System Preferences, go to the Sharing item, and enable 'Remote Login'
+- You have a files named `~/.ssh/id_rsa` and `~/.ssh/id_rsa.pub`
+- `~/.ssh/id_rsa` is NOT readable by any other user
+  - You can verify this with `ls -l ~/.ssh/id_rsa` - the line should start with `-rw-------` or `-r--------`. If it
+    does not, execute `chmod 0600 ~/.ssh/id_rsa`.
+- The file `~/.ssh/authorized_keys` exists and contains a copy of your public key from `~/.ssh/id_rsa.pub`.
+  - Note that it is normal for it to contain other items as well.
+- The key in `~/.ssh/id_rsa` does *not* have a passphrase.
+  - You can test this by executing `ssh-keygen -y`. If does *not* ask for a passphrase, then your key is OK.
+  - If your key does have a passphrase, remove it. You can do this by running `ssh-keygen -p`. Enter the passphrase,
+    then when prompted for the new passphrase, hit Enter.
+
+Now verify your setup by running the command: `ssh localhost echo hello world`
+
+If you see a message similar to this:
+
+<pre>
+The authenticity of host 'localhost (::1)' can't be established.
+RSA key fingerprint is 7b:e3:8e:c6:5b:2a:05:a1:7c:8a:cf:d1:6a:83:c2:ad.
+Are you sure you want to continue connecting (yes/no)?
+</pre>
+
+then answer 'yes', and then repeat the command run again.
+
+If the response is `hello world`, with no other output or prompts, then your SSH setup is good and Brooklyn should be
+able to use it without a problem.
+
+If these steps are not working, [these instructions]({{ site.data.brooklyn.url.userguide }}/use/guide/locations/) may be
+useful.
+
 
 ## Install Brooklyn
 
@@ -87,8 +127,6 @@ $ wget {{site.url}}/quickstart/brooklyn.properties
 
 Open brooklyn.properties in a text editor and add your cloud credentials.
 
-If you would rather test Brooklyn on localhost, follow [these instructions]({{ site.data.brooklyn.url.userguide }}/use/guide/locations/) to ensure that your Brooklyn can access your machine.
-
 Restart Brooklyn:
 
 {% highlight bash %}
@@ -108,14 +146,18 @@ Open the web console ([127.0.0.1:8081](http://127.0.0.1:8081)). As Brooklyn is n
 
 ### Chose your Cloud / Location
 
-Edit the 'location' parameter in the YAML template (repeated below) to use the location you configured.
+Let's look again at our YAML blueprint:
 
-For example, replace:
 {% highlight yaml %}
-location: location
+{% readj _my-web-cluster.yaml %}
 {% endhighlight %}
 
-with (one of):
+Copy this document into the large text box on the YAML tab, labelled `Enter CAMP Plan YAML code here`. But *before* you
+submit it, we need to make a modification.
+
+Find the line near the top of the blueprint that starts `location:`. Change the line to name a location. For example,
+one of these lines:
+
 {% highlight yaml %}
 location: aws-ec2:us-east-1
 location: rackspace-cloudservers-us:ORD
@@ -125,14 +167,8 @@ location: localhost
 
 **My Web Cluster Blueprint**
 
-{% highlight yaml %}
-{% readj _my-web-cluster.yaml %}
-{% endhighlight %}
-
-Paste the modified YAML into the dialog and click 'Finish'.
-The dialog will close and Brooklyn will begin deploying your application.
-
-Your application will be shown as 'Starting' on the web console's front page.
+With the modified YAML in the dialog, click 'Finish'. The dialog will close and Brooklyn will begin deploying your
+application. Your application will be shown as 'Starting' on the web console's front page.
 
 ![My Web Cluster is STARTING.](images/my-web-cluster-starting.png)
 
