@@ -7,6 +7,11 @@ In the [previous step](index.html) we downloaded Brooklyn and used it to deploy 
 
 Here we will introduce Polices using a simple demo app, which we will load from a Service Catalog.
 
+We strongly advise that you complete [the first tutorial](index.html) before proceeding with this one, to make sure that
+your machine is correctly configured to be able to run Brooklyn applications. Like the previous tutorial, we are also
+assuming that you are running Linux or Mac OSX.
+
+
 ## Service Catalogs
 
 Download the template [catalog.xml](catalog.xml) to your `~/.brooklyn/` folder, and relaunch Brooklyn.
