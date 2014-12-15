@@ -9,6 +9,9 @@ module SiteStructure
       navgroups = site.pages.detect { |page| page.path == SiteStructure::ROOT }.data['navgroups']
       navgroups.each do |ng|
         ng['page'] = site.pages.detect { |page| page.path == ng['page'] }
+        if not ng['title_in_menu']
+          ng['title_in_menu'] = ng['title'].capitalize
+        end
       end
       site.data['navgroups'] = navgroups
       site.data['structure'] = gen_structure(site, SiteStructure::ROOT, nil, navgroups)
@@ -46,7 +49,13 @@ module SiteStructure
       page.data['parent'] = parent
       if page.data['children']
         page.data['children'].each do |c|
-          c['reference'] = gen_structure(site, c['path'], page, navgroups)
+          if c['path']
+            # links to another Jekyll-managed page
+            c['reference'] = gen_structure(site, c['path'], page, navgroups)
+          elsif c['link']
+            # links to a not-Jekyll-managed page on this site
+            c['reference'] = { 'url' => c['link'], 'title' => c['title'] }
+          end
         end
       end
       

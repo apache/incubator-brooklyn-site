@@ -11,9 +11,9 @@ children:
 navgroups:
 - { id: learnmore, page: learnmore.md, title: learn more }
 - { id: download, page: download.md, title: download }
-- { id: getstarted, page: quickstart/index.md, title: get started }
-- { id: documentation, page: documentation.md, title: documentation }
-- { id: community, page: community/index.md, title: community }
+- { id: getstarted, page: quickstart/index.md, title: get started, title_in_menu: Get started }
+- { id: documentation, page: documentation.md, title: documentation, title_in_menu: All documentation }
+- { id: community, page: community/index.md, title: community, title_in_menu: Community home }
 ---
 
 <div class="jumbotron">
