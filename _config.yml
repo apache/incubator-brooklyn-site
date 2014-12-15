@@ -8,10 +8,18 @@
 # See in _scripts/ for more advanced dev and prod considerations.
 
 # Deliberately add the "/website" to the URL to catch out places where a document uses a link starting "/" - these
-# links should either be relative or use {{site.url}}. We want to preserve this behaviour to allow the possibility of
+# links should either be relative or use {{site.path.website}}. We want to preserve this behaviour to allow the possibility of
 # "staging servers" which may publish preview copies of the site at a non-root URL.
 
+url_root: http://0.0.0.0:4000
+
+path:
+  website: /website 
+
+# site.url is deprecated in favour of site.path.website
 url: http://0.0.0.0:4000/website
+
+# this is the instruction to jekyll to put things under /website dir
 baseurl: /website
 
 
