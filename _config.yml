@@ -15,23 +15,22 @@ path:
   style: /style
   website: /website 
   v: /v
+# can insert a prefix above, for *all* paths, if we want to test in a subdirectory
+# TODO some hard links to /v/... currently
 
-# site.url is deprecated in favour of site.path.website
+# site.url is deprecated in favour of site.path.website, and in the few places that need a server name, url_root
 # url: http://0.0.0.0:4000/website
 
 # no longer putting things under /website; there is a new website/ dir in the folder structure for most things
 baseurl: ""
 
-
-# Use local copies of depenedencies (but provide the full URL so it is easy to switch to remote locations)
-
+# Use local copies of dependencies in dev build (switched to remote using URLs for prod build)
 dependency_mode: local
 dependency_urls:
   bootstrap.css: https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css
   bootstrap.js: https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js
   jquery.js: https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js
 
-
-# These files should not be marked down (in addition to _* contents)
+# These files should not be included in the final build (in addition to _* contents)
 
 exclude: ['README.md']
