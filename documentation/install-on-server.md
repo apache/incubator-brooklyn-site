@@ -13,7 +13,7 @@ There is a simple bash script available to help with the installation process.
 #### Script prerequisites
 The script assumes that the server is a recent *RHEL/CentOS 6.x Linux* or *Ubuntu 12.04* installation, but other Linux variants have been tested successfully.
 
-The script will install Java 7 and other required packages if they are not present. You must have root access over [passwordless SSH]({{ site.url }}/documentation/passwordless-ssh.html) to install brooklyn, but the service runs as an ordinary user once installed. 
+The script will install Java 7 and other required packages if they are not present. You must have root access over [passwordless SSH]({{ site.path.website }}/documentation/passwordless-ssh.html) to install brooklyn, but the service runs as an ordinary user once installed. 
 
 To manage the brooklyn service you must also be able to connect to port 8081 remotely.
 
@@ -37,15 +37,15 @@ $ ./brooklyn-install.sh -s -r <your-server-ip>
 Before installing Apache Brooklyn, you will need to configure the host as follows. 
 
 * install Java JRE or SDK (version 6 or later)
-* install [SSH key]({{ site.url }}/documentation//ssh-key.html), if not available.
-* enable [passwordless ssh login]({{ site.url }}/documentation/passwordless-ssh.html).
+* install [SSH key]({{ site.path.website }}/documentation//ssh-key.html), if not available.
+* enable [passwordless ssh login]({{ site.path.website }}/documentation/passwordless-ssh.html).
 * create a `~/.brooklyn` directory on the host with `$ mkdir ~/.brooklyn`
 * Check your iptables service, and if enabled, make sure that it accepts all incoming connections to 8443+ ports.
-* [optional] Increase [linux kernel entropy]({{ site.url }}/documentation//increase-entropy.html) for faster ssh connections.
+* [optional] Increase [linux kernel entropy]({{ site.path.website }}/documentation//increase-entropy.html) for faster ssh connections.
 
 ## <a id="download"></a>Download Brooklyn
 
-Download the [Brooklyn distribution]({{ site.data.brooklyn.url.dist.tgz }}) and expand it to your home directory ( `~/` ), or in a location of your choice. Other [download options]({{site.url}}/download.html) are available.
+Download the [Brooklyn distribution]({{ site.data.brooklyn.url.dist.tgz }}) and expand it to your home directory ( `~/` ), or in a location of your choice. Other [download options]({{site.path.website}}/download.html) are available.
 
 {% if brooklyn_version contains 'SNAPSHOT' %}
 Expand the `tar.gz` archive (note: as this is a -SNAPSHOT version, your filename will be slightly different):
@@ -86,7 +86,7 @@ Create a `.brooklyn` folder in your home directory and download the template [br
 
 {% highlight bash %}
 $ mkdir -p ~/.brooklyn
-$ wget -O ~/.brooklyn/brooklyn.properties {{site.url}}/quickstart/brooklyn.properties
+$ wget -O ~/.brooklyn/brooklyn.properties {{site.url_root}}{{site.path.website}}/quickstart/brooklyn.properties
 $ chmod 600 ~/.brooklyn/brooklyn.properties
 {% endhighlight %}
 
@@ -97,7 +97,7 @@ By default Brooklyn loads the catalog of available application components and se
 `~/.brooklyn/catalog.xml`. 
 
 {% highlight bash %}
-$ wget -O ~/.brooklyn/catalog.xml {{site.url}}/quickstart/catalog.xml
+$ wget -O ~/.brooklyn/catalog.xml {{site.url_root}}{{site.path.website}}/quickstart/catalog.xml
 {% endhighlight %}
 
 The `catalog.xml` is the application blueprint catalog. The above example file contains some blueprints which will be automatically downloaded from the web if you run them.

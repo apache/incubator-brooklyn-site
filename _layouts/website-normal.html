@@ -11,9 +11,9 @@ layout: website-base
         <div class="col-md-3">
             {% if page.menu2 %}
             <div class="list-group">
-                <h4><a href="{{site.url}}{{page.menu2parent.url}}" class="list-group-item{% if page.menu2parent.path == page.path %} active{% endif %}">{{ page.menu2parent.title }}</a></h4>
+                <h4><a href="{{site.path.website}}{{page.menu2parent.url}}" class="list-group-item{% if page.menu2parent.path == page.path %} active{% endif %}">{{ page.menu2parent.title }}</a></h4>
                 {% for child in page.menu2 %}
-                <a href="{{site.url}}{{child.reference.url}}" class="list-group-item{% if child.reference.path == page.path %} active{% endif %}">{{ child.reference.title }}</a>
+                <a href="{{site.path.website}}{{child.reference.url}}" class="list-group-item{% if child.reference.path == page.path %} active{% endif %}">{{ child.reference.title }}</a>
                 {% endfor %}
             </div>
             {% endif %}

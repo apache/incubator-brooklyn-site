@@ -11,9 +11,9 @@ children:
 
 Our main user manual is organised by release version. Please pick the version that you are using:
 
-- [0.7.0-M1]({{ site.url }}/v/0.7.0-M1) -
+- [0.7.0-M1]({{ site.path.website }}/v/0.7.0-M1) -
   Please note that this release was made prior to entering the Apache Incubator,
   and therefore it is not endorsed by Apache.
 
 ## Server install
-Follow this [guide]({{ site.url }}/documentation/install-on-server.html) to install Brooklyn on a production server.
+Follow this [guide]({{ site.path.website }}/documentation/install-on-server.html) to install Brooklyn on a production server.

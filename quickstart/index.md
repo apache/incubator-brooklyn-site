@@ -58,7 +58,7 @@ useful.
 
 ## Install Brooklyn
 
-Download the [Brooklyn distribution]({{ site.data.brooklyn.url.dist.tgz }}) and expand it to your home directory ( `~/` ), or in a location of your choice. (Other [download options]({{site.url}}/download.html) are available.)
+Download the [Brooklyn distribution]({{ site.data.brooklyn.url.dist.tgz }}) and expand it to your home directory ( `~/` ), or in a location of your choice. (Other [download options]({{site.path.website}}/download.html) are available.)
 
 {% if brooklyn_version contains 'SNAPSHOT' %}
 Expand the `tar.gz` archive (note: as this is a -SNAPSHOT version, your filename will be slightly different):
@@ -122,7 +122,7 @@ Create a `.brooklyn` folder in your home directory and download the template [br
 {% highlight bash %}
 $ mkdir ~/.brooklyn
 $ cd ~/.brooklyn
-$ wget {{site.url}}/quickstart/brooklyn.properties
+$ wget {{site.url_root}}{{site.path.website}}/quickstart/brooklyn.properties
 {% endhighlight %}
 
 Open brooklyn.properties in a text editor and add your cloud credentials.

@@ -14,10 +14,11 @@
 url_root: http://0.0.0.0:4000
 
 path:
+  style: /website/style
   website: /website 
 
 # site.url is deprecated in favour of site.path.website
-url: http://0.0.0.0:4000/website
+# url: http://0.0.0.0:4000/website
 
 # this is the instruction to jekyll to put things under /website dir
 baseurl: /website

@@ -6,8 +6,8 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="{% dependency_url bootstrap.css %}" rel="stylesheet">
-<link href="{{site.url}}/style/deps/bootstrap-theme.css" rel="stylesheet">
-<link href="{{site.url}}/style/css/website.css" rel="stylesheet">
+<link href="{{site.path.website}}/style/deps/bootstrap-theme.css" rel="stylesheet">
+<link href="{{site.path.website}}/style/css/website.css" rel="stylesheet">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                {% if page.navgroup != 'home' %}<a class="navbar-brand" href="{{site.url}}"><img src="{{site.url}}/style/img/apache-brooklyn-logo-244px-wide.png" alt="brooklyn"></a>{% endif %}
+                {% if page.navgroup != 'home' %}<a class="navbar-brand" href="{{site.path.website}}/"><img src="{{site.path.website}}/style/img/apache-brooklyn-logo-244px-wide.png" alt="brooklyn"></a>{% endif %}
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,21 +32,21 @@
                     {% for navgroup in site.data.navgroups %}
                     {% if navgroup.page.menu2 %}
                     <li class="dropdown{% if page.navgroup == navgroup.id %} active{% endif %}">
-                        <a href="{{site.url}}{{navgroup.page.url}}">{{navgroup.title}}</a>
+                        <a href="{{site.path.website}}{{navgroup.page.url}}">{{navgroup.title}}</a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="{{site.url}}{{navgroup.page.url}}">{{navgroup.title_in_menu}}</a>
+                                <a href="{{site.path.website}}{{navgroup.page.url}}">{{navgroup.title_in_menu}}</a>
                             </li>
                             <li class="divider"></li>
                             {% for child in navgroup.page.menu2 %}
                             <li>
-                                <a href="{{site.url}}{{child.reference.url}}">{{child.reference.title}}</a>
+                                <a href="{{site.path.website}}{{child.reference.url}}">{{child.reference.title}}</a>
                             </li>
                             {% endfor %}
                         </ul>
                     </li><!-- {{ navgroup.id }} -->
                     {% else %}
-                    <li class="{% if page.navgroup == navgroup.id %}active{% endif %}"><a href="{{site.url}}{{navgroup.page.url}}">{{navgroup.title}}</a></li><!-- {{ navgroup.id }} -->
+                    <li class="{% if page.navgroup == navgroup.id %}active{% endif %}"><a href="{{site.path.website}}{{navgroup.page.url}}">{{navgroup.title}}</a></li><!-- {{ navgroup.id }} -->
                     {% endif %}
                     {% endfor %}
                 </ul>
