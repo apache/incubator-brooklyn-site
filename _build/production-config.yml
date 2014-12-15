@@ -1,6 +1,8 @@
 
 url: https://brooklyn.incubator.apache.org
-baseurl: ""
+
+path:
+  website: ""
 
 dependency_mode: remote
 

@@ -17,7 +17,7 @@ module JekyllRead
     end
     def render(context)
 	jekyllSite = context.registers[:site]
-	dir = jekyllSite.source+'/'+File.dirname(context['page']['url'])
+	dir = jekyllSite.source+'/'+File.dirname(context['page']['path'])
 	filename = @text.strip
         filename = context[filename] || filename
 	if !filename.match(/^\/.*/) 
@@ -43,7 +43,7 @@ module JekyllRead
 # support vars (above) and relative paths in filename (below - need the right path if there is a subsequent link)
         dir = filename
 	if !filename.match(/^\/.*/) 
-		dir = File.dirname(context['page']['url']) + '/' + filename
+		dir = File.dirname(context['page']['path']) + '/' + filename
 	end
 	dir = dir.gsub(/\/\/+/,'/')
 	filename = dir.sub(/^.*\//, '')

@@ -1,8 +1,8 @@
 # Builds a hierarchical structure for the site, based on the YAML front matter of each page
 # Starts from a page called "index.md", and follows "children" links in the YAML front matter
 module SiteStructure
-  
-  ROOT = "/website/index.md"
+ 
+  BROOKLYN_WEBSITE_ROOT = "/website/index.md" unless defined? BROOKLYN_WEBSITE_ROOT
   
   class Generator < Jekyll::Generator
     def find_page_with_path_absolute_or_relative_to(site, path, referrent)
@@ -16,12 +16,17 @@ module SiteStructure
       end
 
       throw "Could not find a page called: #{path} (referenced from #{referrent ? referrent.path : "root"})" unless page
-      
+
+      if (page.url.start_with?("/website"))
+        page.url.slice!("/website")
+        page.url.prepend(site.config['path']['website'])
+      end
+ 
       page     
     end
 
     def generate(site)
-      root_page = find_page_with_path_absolute_or_relative_to(site, SiteStructure::ROOT, nil)
+      root_page = find_page_with_path_absolute_or_relative_to(site, SiteStructure::BROOKLYN_WEBSITE_ROOT, nil)
       navgroups = root_page.data['navgroups']
       navgroups.each do |ng|
         ng['page'] = find_page_with_path_absolute_or_relative_to(site, ng['page'], root_page)
@@ -30,7 +35,7 @@ module SiteStructure
         end
       end
       site.data['navgroups'] = navgroups
-      site.data['structure'] = gen_structure(site, SiteStructure::ROOT, nil, navgroups)
+      site.data['structure'] = gen_structure(site, SiteStructure::BROOKLYN_WEBSITE_ROOT, nil, navgroups)
     end
     
     def gen_structure(site, pagename, parent, navgroups)
