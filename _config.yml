@@ -5,23 +5,22 @@
 #
 #     jekyll serve --watch
 
-# See in _scripts/ for more advanced dev and prod considerations.
+# See in _build/ for more advanced dev and prod considerations.
 
-# Deliberately add the "/website" to the URL to catch out places where a document uses a link starting "/" - these
-# links should either be relative or use {{site.path.website}}. We want to preserve this behaviour to allow the possibility of
-# "staging servers" which may publish preview copies of the site at a non-root URL.
+# links should either be relative or use {{site.path.website}}
 
 url_root: http://0.0.0.0:4000
 
 path:
-  style: /website/style
+  style: /style
   website: /website 
+  v: /v
 
 # site.url is deprecated in favour of site.path.website
 # url: http://0.0.0.0:4000/website
 
-# this is the instruction to jekyll to put things under /website dir
-baseurl: /website
+# no longer putting things under /website; there is a new website/ dir in the folder structure for most things
+baseurl: ""
 
 
 # Use local copies of depenedencies (but provide the full URL so it is easy to switch to remote locations)

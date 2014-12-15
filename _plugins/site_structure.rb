@@ -2,7 +2,7 @@
 # Starts from a page called "index.md", and follows "children" links in the YAML front matter
 module SiteStructure
   
-  ROOT = "index.md"
+  ROOT = "website/index.md"
   
   class Generator < Jekyll::Generator
     def generate(site)
@@ -19,7 +19,8 @@ module SiteStructure
     
     def gen_structure(site, pagename, parent, navgroups)
       page = site.pages.detect { |page| page.path == pagename }
-      throw "Could not find a page called: #{pagename} (referenced from #{page ? page.url : nil})" unless page
+
+      throw "Could not find a page called: #{pagename} (referenced from #{parent ? parent.url : "root"})" unless page
       
       # My navgroup is (first rule matches):
       # 1. what I have explicitly declared
@@ -50,10 +51,10 @@ module SiteStructure
       if page.data['children']
         page.data['children'].each do |c|
           if c['path']
-            # links to another Jekyll-managed page
+            # links to another Jekyll site-structured page
             c['reference'] = gen_structure(site, c['path'], page, navgroups)
           elsif c['link']
-            # links to a not-Jekyll-managed page on this site
+            # links to a non-site-structured page, on this site or elsewhere
             c['reference'] = { 'url' => c['link'], 'title' => c['title'] }
           end
         end

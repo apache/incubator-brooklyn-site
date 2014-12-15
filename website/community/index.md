@@ -2,10 +2,10 @@
 layout: website-normal
 title: Community
 children:
-- { path: community/how-to-contribute.md }
-- { path: community/migrate-to-apache.md }
-- { path: community/committers.md }
-- { path: community/how-to-contribute-docs.md }
+- { path: website/community/how-to-contribute.md }
+- { path: website/community/migrate-to-apache.md }
+- { path: website/community/committers.md }
+- { path: website/community/how-to-contribute-docs.md }
 ---
 
 <div class="row">

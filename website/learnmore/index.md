@@ -2,8 +2,8 @@
 layout: website-normal
 title: Learn More
 children:
-- { path: learnmore/yaml-explained.md }
-- { path: learnmore/theory.md, title: Theory }
+- { path: website/learnmore/yaml-explained.md }
+- { path: website/learnmore/theory.md, title: Theory }
 ---
 
 TODO have a list of resources here?  or start w yaml explained?
