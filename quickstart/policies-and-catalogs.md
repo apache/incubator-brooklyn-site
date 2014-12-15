@@ -1,6 +1,6 @@
 ---
 title: Policies and Catalogs
-layout: normal
+layout: website-normal
 ---
 
 In the [previous step](index.html) we downloaded Brooklyn and used it to deploy an application to a cloud, but at its heart Brooklyn is a policy driven *management* plane.

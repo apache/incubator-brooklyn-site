@@ -1,5 +1,5 @@
 ---
-layout: normal
+layout: website-normal
 title: The Theory behind Brooklyn
 navgroup: Learn More
 ---

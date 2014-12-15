@@ -1,6 +1,6 @@
 ---
 title: Passwordless SSH login
-layout: normal
+layout: website-normal
 ---
 To enable passwordless SSH login to a *nix server, first you will need a pair of keys. If you don't already have a keypair generated you'll first of all need to create one.
 To generate a new keypair you run the following command:

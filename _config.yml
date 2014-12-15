@@ -7,12 +7,12 @@
 
 # See in _scripts/ for more advanced dev and prod considerations.
 
-# Deliberately add the "/brooklyn" to the URL to catch out places where a document uses a link starting "/" - these
+# Deliberately add the "/website" to the URL to catch out places where a document uses a link starting "/" - these
 # links should either be relative or use {{site.url}}. We want to preserve this behaviour to allow the possibility of
 # "staging servers" which may publish preview copies of the site at a non-root URL.
 
-url: http://0.0.0.0:4000/brooklyn
-baseurl: /brooklyn
+url: http://0.0.0.0:4000/website
+baseurl: /website
 
 
 # Use local copies of depenedencies (but provide the full URL so it is easy to switch to remote locations)
@@ -26,4 +26,4 @@ dependency_urls:
 
 # These files should not be marked down (in addition to _* contents)
 
-exclude: ['LICENSE.md', 'README.md', 'Gemfile', 'Gemfile.lock' ]
+exclude: ['README.md']

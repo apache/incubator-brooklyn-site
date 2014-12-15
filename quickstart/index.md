@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-layout: normal
+layout: website-normal
 children:
 - { path: quickstart/policies-and-catalogs.md }
 ---

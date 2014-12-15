@@ -1,5 +1,5 @@
 ---
-layout: normal
+layout: website-normal
 title: How to migrate your brooklyncentral fork to Apache
 ---
 

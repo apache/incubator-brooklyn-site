@@ -1,5 +1,5 @@
 ---
-layout: homepage
+layout: website-landing
 title: Home
 navgroup: home
 children:

@@ -1,5 +1,5 @@
 ---
-layout: normal
+layout: website-normal
 title: Community
 children:
 - { path: community/how-to-contribute.md }

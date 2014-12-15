@@ -1,5 +1,5 @@
 ---
-layout: normal
+layout: website-normal
 title: Documentation
 children:
 - { link: v/0.7.0-M1, title: User Manual (0.7.0-M1) }

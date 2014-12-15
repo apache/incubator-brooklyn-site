@@ -1,5 +1,5 @@
 ---
-layout: normal
+layout: website-normal
 title: Installing on a server
 ---
 Here we present two *alternatives* to install Brooklyn:
