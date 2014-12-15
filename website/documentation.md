@@ -3,8 +3,8 @@ layout: website-normal
 title: Documentation
 children:
 - { link: /v/0.7.0-M1, title: User Manual (0.7.0-M1) }
-- { path: website/glossary.md }
-- { path: website/documentation/install-on-server.md }
+- { path: glossary.md }
+- { path: documentation/install-on-server.md }
 ---
 
 ## Official User Manual
@@ -16,4 +16,4 @@ Our main user manual is organised by release version. Please pick the version th
   and therefore it is not endorsed by Apache.
 
 ## Server install
-Follow this [guide]({{ site.path.website }}/documentation/install-on-server.html) to install Brooklyn on a production server.
+Follow this [guide](documentation/install-on-server.html) to install Brooklyn on a production server.

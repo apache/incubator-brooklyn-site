@@ -2,7 +2,7 @@
 title: Getting Started
 layout: website-normal
 children:
-- { path: website/quickstart/policies-and-catalogs.md }
+- { path: policies-and-catalogs.md }
 ---
 
 This guide will walk you through deploying an application to a public cloud.

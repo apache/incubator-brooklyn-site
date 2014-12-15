@@ -2,13 +2,29 @@
 # Starts from a page called "index.md", and follows "children" links in the YAML front matter
 module SiteStructure
   
-  ROOT = "website/index.md"
+  ROOT = "/website/index.md"
   
   class Generator < Jekyll::Generator
+    def find_page_with_path_absolute_or_relative_to(site, path, referrent)
+      page = site.pages.detect { |page| "/"+page.path == path }
+      if !page && referrent
+        page = site.pages.detect { |page| "/"+page.path == "/"+File.dirname(referrent.path)+"/"+path }
+      end
+      if !page
+        page = site.pages.detect { |page| page.path == path }
+        puts "WARNING: link to #{path} in #{referrent ? referrent.path : "root"} uses legacy absolute syntax without leading slash" if page
+      end
+
+      throw "Could not find a page called: #{path} (referenced from #{referrent ? referrent.path : "root"})" unless page
+      
+      page     
+    end
+
     def generate(site)
-      navgroups = site.pages.detect { |page| page.path == SiteStructure::ROOT }.data['navgroups']
+      root_page = find_page_with_path_absolute_or_relative_to(site, SiteStructure::ROOT, nil)
+      navgroups = root_page.data['navgroups']
       navgroups.each do |ng|
-        ng['page'] = site.pages.detect { |page| page.path == ng['page'] }
+        ng['page'] = find_page_with_path_absolute_or_relative_to(site, ng['page'], root_page)
         if not ng['title_in_menu']
           ng['title_in_menu'] = ng['title'].capitalize
         end
@@ -18,9 +34,7 @@ module SiteStructure
     end
     
     def gen_structure(site, pagename, parent, navgroups)
-      page = site.pages.detect { |page| page.path == pagename }
-
-      throw "Could not find a page called: #{pagename} (referenced from #{parent ? parent.url : "root"})" unless page
+      page = find_page_with_path_absolute_or_relative_to(site, pagename, parent)
       
       # My navgroup is (first rule matches):
       # 1. what I have explicitly declared

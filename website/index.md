@@ -3,17 +3,17 @@ layout: website-landing
 title: Home
 navgroup: home
 children:
-- { path: website/learnmore/index.md }
-- { path: website/download.md }
-- { path: website/quickstart/index.md }
-- { path: website/documentation.md }
-- { path: website/community/index.md }
+- { path: learnmore/index.md }
+- { path: download.md }
+- { path: quickstart/index.md }
+- { path: documentation.md }
+- { path: community/index.md }
 navgroups:
-- { id: learnmore, page: website/learnmore/index.md, title: learn more }
-- { id: download, page: website/download.md, title: download }
-- { id: getstarted, page: website/quickstart/index.md, title: get started, title_in_menu: Get started }
-- { id: documentation, page: website/documentation.md, title: documentation, title_in_menu: All documentation }
-- { id: website/community, page: website/community/index.md, title: community, title_in_menu: Community home }
+- { id: learnmore, page: learnmore/index.md, title: learn more }
+- { id: download, page: download.md, title: download }
+- { id: getstarted, page: quickstart/index.md, title: get started, title_in_menu: Get started }
+- { id: documentation, page: documentation.md, title: documentation, title_in_menu: All documentation }
+- { id: website/community, page: community/index.md, title: community, title_in_menu: Community home }
 ---
 
 <div class="jumbotron">
