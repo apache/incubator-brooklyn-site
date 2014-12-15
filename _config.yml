@@ -5,6 +5,8 @@
 #
 #     jekyll serve --watch
 
+encoding: utf-8
+
 # See in _build/ for more advanced dev and prod considerations.
 
 # links should either be relative or use {{site.path.website}}
