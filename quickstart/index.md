@@ -33,7 +33,6 @@ Please check the following items:
     does not, execute `chmod 0600 ~/.ssh/id_rsa`.
 - The file `~/.ssh/authorized_keys` exists and contains a copy of your public key from `~/.ssh/id_rsa.pub`.
   - Note that it is normal for it to contain other items as well.
-  - If `~/.ssh/authorized_keys` does not exist, add the `~/.ssh/id_rsa` with `cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`.
 - The key in `~/.ssh/id_rsa` does *not* have a passphrase.
   - You can test this by executing `ssh-keygen -y`. If it does *not* ask for a passphrase, then your key is OK.
   - If your key does have a passphrase, remove it. You can do this by running `ssh-keygen -p`. Enter the passphrase,
