@@ -1,7 +1,0 @@
-exclude: ['LICENSE.md', 'README.md', 'Gemfile', 'Gemfile.lock' ]
-
-# Deliberately add the "/brooklyn" to the URL to catch out places where a document uses a link starting "/" - these
-# links should either be relative or use {{site.url}}. We want to preserve this behaviour to allow the possibility of
-# "staging servers" which may publish preview copies of the site at a non-root URL.
-url: http://0.0.0.0:4000/brooklyn
-baseurl: /brooklyn
